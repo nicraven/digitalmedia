@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset-="utf-8" />
+<title> Rocking out the new form</title>
+<link href="style.css" rel="stylesheet" type="txt/css" media="screen" />
+</head>
+<body>
+<div id="contact">
+	<h1>Enter your name</h1>
+	<form id="form1" action="()"/>
+			<input type="text" id="name1" placeholder="Enter Your First Name" /> 
+			<br>			
+			<input type="text" id="name2" placeholder="Enter Your First Name" /> 
+			<br>			
+			<input type="text" id="name3" placeholder="Enter Your First Name" />
+<input type="submit" value="Submit">
+</form>
+<p><span id="thename"></span></p>
+<p id="names"> </p>
+
+<script>
+// the following lines grab the input from the form and store it in variables
+    document.getElementById("form1").onsubmit=function() {
+    name1 = document.forms["form1"]["name1"].value;
+    name2 = document.forms["form1"]["name2"].value;
+    name3 = document.forms["form1"]["name3"].value;
+    
+    thename = [name1, name2, name3];
+   
+    document.getElementById("thename").innerHTML = "the Names are " + thename;
+    
+    //the next line reads each name into an array
+    n=0;
+    	for(i=0;i<thename.length; i++) {
+    	if(thename[i].length == 5){
+    	document.getElementById("names").innerHTML = thename[i];
+    }//end if 
+    	else{
+    	n++;
+    } //end else
+    }//end for
+    if(n==i) {
+    document.getElementById("names").innerHTML="No Name has 5 letters";
+    }
+
+    //and you need a statement that uses the getElementById to place what you want above in thename id when a name is found
+
+
+
+
+
+// ends for loop
+return false; // required to not refresh the page; just leave this here
+
+}// end the submit function
+</script>
+</body>
+</html>
